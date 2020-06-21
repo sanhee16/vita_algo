@@ -8,8 +8,8 @@ using namespace std;
 
 /*
 ***** a,k의 범위 잘 생각하기
-
-
+1e9의 사용
+다이나믹 프로그래밍
 */
 
 
@@ -38,7 +38,7 @@ int main() {
 	sort(a.begin(), a.end());
 	int ans = 0;
 	for (int i = 1; i < k+1; i++) {
-		for (int j = 0; j < a.size() && a[j] < i; j++) {
+		for (int j = 0; j < a.size() && a[j] < i; j++) { // 중요!!!!!! : a[j] < i
 			d[i] = min(d[i - a[j]] + 1, d[i]);
 		}
 	}
